@@ -20,6 +20,6 @@ test("adds 1 to 3 using a standard function yielding 4", (assert) => {
 
 // functional tests
 test("adds 1 to 2 with a callback function yielding 3", (assert) => {
-  assert.strictEqual(two(addend => addend + 1), 3);
+  assert.strictEqual(two(addOne), 3);
   assert.end();
 });
