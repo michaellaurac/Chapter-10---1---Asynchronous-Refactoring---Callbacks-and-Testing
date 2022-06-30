@@ -1,21 +1,17 @@
 /* eslint-disable n/no-callback-literal */
 
-function addOne (addend) {
-  return addend + 1;
+function addOne (addend, callback) {
+  callback(addend + 1);
 }
 
 function two (callback) {
-  return callback(2);
+  callback(2, console.log);
 }
 
 function three (callback) {
-  return callback(3);
-}
-
-function four (callback) {
   setTimeout(function () {
-    return callback(4);
+    callback(3, console.log);
   }, 500);
 }
 
-module.exports = { addOne, two, three, four };
+module.exports = { addOne, two, three };
